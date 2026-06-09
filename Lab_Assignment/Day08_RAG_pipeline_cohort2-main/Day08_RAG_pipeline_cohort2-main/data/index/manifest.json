@@ -1,0 +1,13 @@
+{
+  "document_count": 8,
+  "chunk_count": 679,
+  "chunk_size": 800,
+  "chunk_overlap": 120,
+  "chunking_method": "recursive",
+  "embedding_model": "gemini-embedding-001",
+  "embedding_dim": 3072,
+  "embedding_task_type": "RETRIEVAL_DOCUMENT",
+  "embedding_batch_size": 16,
+  "vector_store": "local_numpy",
+  "normalized_embeddings": true
+}

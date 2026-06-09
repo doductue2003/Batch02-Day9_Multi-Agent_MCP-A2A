@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DrugLaw RAG Console</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="rail" aria-label="Workspace controls">
+        <div class="brand-block">
+          <div class="sigil" aria-hidden="true"></div>
+          <div>
+            <p class="eyebrow">RAG CONSOLE</p>
+            <h1>DrugLaw Nexus</h1>
+          </div>
+        </div>
+
+        <section class="control-group" aria-label="Mode">
+          <label class="field-label">Mode</label>
+          <div class="segmented" role="tablist" aria-label="Workspace mode">
+            <button class="segment active" data-mode="answer" type="button">Answer</button>
+            <button class="segment" data-mode="inspect" type="button">Inspect</button>
+          </div>
+        </section>
+
+        <section class="control-group" aria-label="Evidence depth">
+          <div class="label-row">
+            <label class="field-label" for="topK">Evidence chunks</label>
+            <output id="topKValue">5</output>
+          </div>
+          <input id="topK" type="range" min="3" max="8" value="5" />
+        </section>
+
+        <section class="metrics" aria-label="Index metrics">
+          <div>
+            <span>Documents</span>
+            <strong id="docCount">--</strong>
+          </div>
+          <div>
+            <span>Chunks</span>
+            <strong id="chunkCount">--</strong>
+          </div>
+          <div class="wide">
+            <span>Embedding</span>
+            <strong id="embeddingModel">loading</strong>
+          </div>
+        </section>
+
+        <section class="guardrail">
+          <span class="pulse" aria-hidden="true"></span>
+          <div>
+            <strong>Guardrail online</strong>
+            <span id="guardrailState">Awaiting query</span>
+          </div>
+        </section>
+
+        <button id="clearBtn" class="ghost-button" type="button">Clear session</button>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Vietnamese legal intelligence</p>
+            <h2>Evidence-grounded research console</h2>
+          </div>
+          <div class="status-cluster">
+            <span id="lastLatency">idle</span>
+            <span id="lastSource">source: none</span>
+          </div>
+        </header>
+
+        <section id="chat" class="chat-log" aria-live="polite">
+          <div class="empty-state">
+            <div class="scanner" aria-hidden="true"></div>
+            <strong>Ask a legal question or inspect retrieved evidence.</strong>
+          </div>
+        </section>
+
+        <form id="composer" class="composer">
+          <textarea
+            id="messageInput"
+            name="message"
+            rows="2"
+            maxlength="2000"
+            placeholder="Ask about Vietnamese drug law or related cases"
+            required
+          ></textarea>
+          <button id="sendBtn" type="submit">Send</button>
+        </form>
+      </section>
+
+      <aside class="evidence" aria-label="Evidence panel">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow">Evidence stream</p>
+            <h2>Sources</h2>
+          </div>
+          <span id="sourceCount">0</span>
+        </div>
+        <div id="sources" class="source-list">
+          <p class="muted">No evidence loaded.</p>
+        </div>
+      </aside>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

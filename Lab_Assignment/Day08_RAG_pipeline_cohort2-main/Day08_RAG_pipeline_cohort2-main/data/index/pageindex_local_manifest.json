@@ -1,0 +1,55 @@
+{
+  "mode": "local_vectorless_fallback",
+  "document_count": 8,
+  "documents": [
+    {
+      "source": "116.signed.md",
+      "path": "legal/116.signed.md",
+      "type": "legal",
+      "size": 321480
+    },
+    {
+      "source": "2025_507 + 508_11-VBHN-VPQH.md",
+      "path": "legal/2025_507 + 508_11-VBHN-VPQH.md",
+      "type": "legal",
+      "size": 109782
+    },
+    {
+      "source": "73luat.md",
+      "path": "legal/73luat.md",
+      "type": "legal",
+      "size": 80668
+    },
+    {
+      "source": "article_01.md",
+      "path": "news/article_01.md",
+      "type": "news",
+      "size": 9021
+    },
+    {
+      "source": "article_02.md",
+      "path": "news/article_02.md",
+      "type": "news",
+      "size": 4897
+    },
+    {
+      "source": "article_03.md",
+      "path": "news/article_03.md",
+      "type": "news",
+      "size": 3000
+    },
+    {
+      "source": "article_04.md",
+      "path": "news/article_04.md",
+      "type": "news",
+      "size": 3686
+    },
+    {
+      "source": "article_05.md",
+      "path": "news/article_05.md",
+      "type": "news",
+      "size": 3650
+    }
+  ],
+  "pageindex_api_configured": false
+}
