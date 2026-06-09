@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Legal Multi-Agent Console</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="System navigation">
+        <div class="brand">
+          <div class="brand-mark">A2A</div>
+          <div>
+            <h1>Legal Agents</h1>
+            <p>Multi-Agent Console</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" aria-label="Stages">
+          <button class="nav-item active" type="button" data-stage="stage5">
+            <span class="nav-dot"></span>
+            A2A System
+          </button>
+          <button class="nav-item" type="button" data-stage="stage4">
+            <span class="nav-dot"></span>
+            In-Process Graph
+          </button>
+          <button class="nav-item" type="button" data-stage="stage3">
+            <span class="nav-dot"></span>
+            ReAct Agent
+          </button>
+          <button class="nav-item" type="button" data-stage="stage2">
+            <span class="nav-dot"></span>
+            RAG Tools
+          </button>
+        </nav>
+
+        <div class="service-list" id="serviceList" aria-label="Service status"></div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Batch 02 Day 9</p>
+            <h2>Legal Multi-Agent A2A Console</h2>
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-button" id="refreshStatus" type="button" title="Refresh status" aria-label="Refresh status">
+              <span class="icon">R</span>
+            </button>
+            <button class="icon-button" id="clearOutput" type="button" title="Clear output" aria-label="Clear output">
+              <span class="icon">C</span>
+            </button>
+          </div>
+        </header>
+
+        <section class="query-layout">
+          <div class="composer-panel">
+            <div class="field-row">
+              <label for="customerEndpoint">Customer Agent</label>
+              <input id="customerEndpoint" type="url" value="http://localhost:10100" spellcheck="false" />
+            </div>
+
+            <div class="field-row">
+              <label for="questionInput">Question</label>
+              <textarea id="questionInput" rows="7">If a company breaks a contract, avoids taxes, and shares user data without consent, what are the legal, regulatory, and privacy consequences?</textarea>
+            </div>
+
+            <div class="action-row">
+              <button class="primary-button" id="sendQuestion" type="button">Send</button>
+              <button class="secondary-button" id="runDemo" type="button">Demo</button>
+            </div>
+          </div>
+
+          <div class="metrics-panel" aria-label="System metrics">
+            <div class="metric">
+              <span class="metric-label">Registry</span>
+              <strong id="registryMetric">Unknown</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Agents</span>
+              <strong id="agentMetric">0</strong>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Last Run</span>
+              <strong id="lastRunMetric">None</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="flow-section" aria-label="Agent flow">
+          <div class="section-heading">
+            <h3>Agent Flow</h3>
+            <span id="runState" class="status-pill idle">Idle</span>
+          </div>
+          <div class="timeline" id="timeline"></div>
+        </section>
+
+        <section class="response-section" aria-label="Response">
+          <div class="section-heading">
+            <h3>Response</h3>
+            <button class="text-button" id="copyResponse" type="button">Copy</button>
+          </div>
+          <pre id="responseOutput">Ready.</pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
